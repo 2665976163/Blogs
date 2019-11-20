@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Layui</title>
+		<title>找我有事请大叫的博客 ...</title>
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,13 +15,25 @@
 				background: #f7f7f7;
 			}
 			
-			#headImg {
+			#headImg{
+				position:relative;
 				max-width: 128px;
 				max-height: 128px;
 				margin-top: 35px;
 				margin-left: 80px;
 			}
-			
+			#wx{
+				opacity: 0.6;
+				max-width: 128px;
+				max-height: 128px;
+				position: absolute;
+				top: 35px;
+				left: 80px;
+				display:none;
+			}
+			#headImg:hover #wx{
+				display:block;
+			}
 			#left-avi {
 				display: inline-block;
 				width: 300px;
@@ -39,6 +51,8 @@
 				left: 316px;
 				display: inline-block;
 				width: 1199px;
+				height: 640px;
+				overflow:auto;
 			}
 			
 			#name {
@@ -51,6 +65,9 @@
 		<script>
 			function toDiv(bean){
 				$("#"+bean).toggle();
+			}
+			function toWx(){
+				$("#wx").toggle();
 			}
 		</script>
 	</head>
@@ -66,7 +83,10 @@
 		<div style="position: relative;">
 
 			<div id="left-avi">
-				<img src="img/QQ图片20191120132736.jpg" id="headImg">
+				<div style="position:relative;">
+					<img src="img/QQ图片20191120132736.jpg" id="headImg" onmouseover="toWx()">
+					<img src="img/wx.jpg" id="wx" onmouseout="toWx()" title="微信二维码">
+				</div>
 				<div id="name">
 					找我有事请大叫
 				</div>
@@ -92,8 +112,8 @@
 						<tr id="super_1">
 							<td onclick="toDiv('child_1')">找我有事请大叫</td>
 							<td onclick="toDiv('child_1')" style="font-size: 12px;"><img src="img/favicon.ico.png" style="max-width: 20px;max-height: 20px;">智能时代产业园</td>
-							<td onclick="toDiv('child_1')">2019年-11月-19日</td>
-							<td onclick="toDiv('child_1')">人生似修行</td>
+							<td onclick="toDiv('child_1')">2019年11月19日</td>
+							<td onclick="toDiv('child_1')">我的时间日志 ...</td>
 						</tr>
 						<tr id="child_1" style="display: none;" class="showHover">
 							<td colspan="4"><blockquote class="layui-elem-quote"><b>目标地址：</b><span>https://yinpeiyuan.github.io/</span></blockquote></td>
